@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello-vue</title>
+</head>
+<body>
+<!-- vue对象的html模版 -->
+<div id = "app">
+    <h1>大家好, 我是 {{name}}</h1>
+</div>
+<!-- 引入vue模块 -->
+<script src="node_modules/vue/dist/vue.js"></script>
+<script>
+    // 初始化一个vue的实例
+    const app = new Vue({
+        el: "#app",
+        data: {
+            name: "刘德华"
+        }
+    })
+</script>
+</body>
+</html>
