@@ -15,14 +15,16 @@
     <input type="button" value="点我啊111!" v-on:click="incr">
 
     <!-- 花括号: js表达式-->
-    <h1>大家好, 我是 {{name}}, 有{{num}}位女神迷恋我!</h1>
+    <!--<h1>大家好, 我是 {{name}}, 有{{num}}位女神迷恋我!</h1>-->
+    <!-- 网速慢的时候差值表达式可能会出现{{XXX}} 这种, 如下是能解决-->
+    <h1>大家好, 我是 <span v-text="name">张学友</span>, 有{{num}}位女神迷恋我!</h1>
 </div>
 <!-- 引入vue模块 -->
 <script src="node_modules/vue/dist/vue.js"></script>
 <script>
     // 初始化一个vue的实例
     const app = new Vue({
-        el: "#app", //elemet的缩写, 选择器
+        el: "#app", //element的缩写, 选择器
         data: { // 定义数据模型
             name: "刘德华",
             num: 100
