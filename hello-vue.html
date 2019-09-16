@@ -11,6 +11,10 @@
         <li v-for="user in users">{{user.name}}- {{user.gender}}- {{user.age}}</li>
     </ul>
     <hr>
+    <ul>
+        <li v-for="(user, index) in users">{{index + 1}}. {{user.name}}- {{user.gender}}- {{user.age}}</li>
+    </ul>
+    <hr>
     <!-- 双向绑定, v-model: 数据模型-->
     <input type="text" v-model="num">
     <!-- v-on: 事件名称= js表达式 -->
@@ -31,13 +35,13 @@
         el: "#app", //element的缩写, 选择器
         data: { // 定义数据模型
             name: "刘德华",
-            num: 100 ,
-            users:[
-                {name:'柳岩', gender:'女', age: 21},
-                {name:'峰哥', gender:'男', age: 18},
-                {name:'范冰冰', gender:'女', age: 24},
-                {name:'刘亦菲', gender:'女', age: 18},
-                {name:'古力娜扎', gender:'女', age: 25}
+            num: 100,
+            users: [
+                {name: '柳岩', gender: '女', age: 21},
+                {name: '峰哥', gender: '男', age: 18},
+                {name: '范冰冰', gender: '女', age: 24},
+                {name: '刘亦菲', gender: '女', age: 18},
+                {name: '古力娜扎', gender: '女', age: 25}
             ]
         },
         // 声明了一个方法
