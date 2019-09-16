@@ -6,8 +6,9 @@
 </head>
 <body>
 <!-- vue对象的html模版 -->
-<div id = "app">
-    <h1>大家好, 我是 {{name}}</h1>
+<div id="app">
+    <input type="text" v-model="num">
+    <h1>大家好, 我是 {{name}}, 有{{num}}位女神迷恋我!</h1>
 </div>
 <!-- 引入vue模块 -->
 <script src="node_modules/vue/dist/vue.js"></script>
@@ -16,7 +17,8 @@
     const app = new Vue({
         el: "#app", //elemet的缩写, 选择器
         data: { // 定义数据模型
-            name: "刘德华"
+            name: "刘德华",
+            num: 100
         }
     })
 </script>
