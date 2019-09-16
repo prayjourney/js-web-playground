@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Hello-vue</title>
@@ -7,7 +7,11 @@
 <body>
 <!-- vue对象的html模版 -->
 <div id="app">
+    <!-- 双向绑定, v-model: 数据模型-->
     <input type="text" v-model="num">
+
+
+    <!-- 花括号: js表达式-->
     <h1>大家好, 我是 {{name}}, 有{{num}}位女神迷恋我!</h1>
 </div>
 <!-- 引入vue模块 -->
