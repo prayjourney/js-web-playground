@@ -9,7 +9,8 @@
 <div id="app">
     <!-- 双向绑定, v-model: 数据模型-->
     <input type="text" v-model="num">
-
+    <!-- v-on: 事件名称= js表达式 -->
+    <input type="button" value="点我啊!" v-on:="num++">
 
     <!-- 花括号: js表达式-->
     <h1>大家好, 我是 {{name}}, 有{{num}}位女神迷恋我!</h1>
