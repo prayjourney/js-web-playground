@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        // var声明变量有问题, 可能会越界, 现在使用let
+        // const声明一个常量
+        for (let i = 0; i < 5; i++) {
+            console.log(i); // 变量
+        }
+        const uuu = 100; //常量
+        console.log(uuu)
+
+        // `可以用于换行, 字符串的模版
+        let str123 = `1231232
+        12312312312
+        3
+        21312312
+        312312
+        `
+        var s1 = "sdfafasfsdf";
+        console.log(s1.includes("sd"));
+        console.log(str123)
+
+        // 解构表达式
+        const arr = [1, 2, 3, 12321]
+        // 开始结构
+        console.log("解构数组");
+        const [u, x, y, z] = arr
+        console.log(arr);
+        console.log(x, y, z, u);
+
+        console.log("解构对象");
+        let person = {name: "张三", age: 15}
+        const {name1, age999} = person;
+        console.log("name1: " + name1);// 解构对象, 属性必须是属性的名称
+        const {name, age} = person;
+        console.log("name: " + name);// 解构对象, 属性必须是属性的名称
+
+        // 函数的优化
+        function fun1(a, b) {
+            console.log(a, b);
+            console.log(a + b);
+        }
+
+        fun1(1, 2)
+
+        // 函数给一个默认值, 如果从没有传值, 则默认为22, b无值得时候, 则默认是7
+        // b = b || 7;这是以前的老式写法
+        function update(a, b, c = 22) {
+            b = b || 7;
+            return a + b + c;
+        }
+
+        console.log(update(1))
+        console.log(update(3, 111))
+
+        // lambda表达式
+        // 一个参数
+        var print2 = obj => console.log(obj);
+        // 多个参数
+        var sum2 = (a, b) => a + b;
+        // 多行代码
+        var sum3 = (a, b, c = 100) => {
+            return a + b + c;
+        }
+        print2(123)
+        console.log(sum2(2, 5))
+        console.log(sum3(1, 2, 1))
+        console.log(sum3(1, 2))
+
+        // 对象的函数属性简写, 对象之中定义函数
+        let person111 = {
+            name: "jack",
+            // 以前：
+            eat: function (food) {
+                console.log(this.name + "在吃" + food);
+            },
+            // 箭头函数的this, 需要注意, 是在其外面
+            // 箭头函数版：
+            eat2: food => console.log(person.name + "在吃" + food),// 这里拿不到this
+            // 简写版：
+            eat3(food) {
+                console.log(this.name + "在吃" + food);
+            }
+        }
+        person111.eat("鸡蛋")
+        person111.eat2("gggggg哥哥哥哥哥哥哥哥哥哥")
+
+        let pp
+        {
+            mg1: "你麻痹"
+            ageg: 28
+        }
+        // 箭头函数 + 解构表达式, 有点问题
+        const fun3 = ({mg1}) => console.log("hello," + mg1);
+        const fun4 = ({mg1, ageg}) => console.log("hello," + mg1 + ageg);
+        // fun3(pp)
+        // fun4(pp)
+
+        // map & reduce ,这个关注一下
+        let arr222 = ['1', '20', '-5', '3'];
+        console.log(arr222)
+
+        // map, 使用调用的函数处理, 然后返回给这个数组
+        let ss001 = [1, 2, 3]
+        ss001 = ss001.map(x => x + 10000);
+        console.log(ss001)
+
+        arr222 = arr222.map(s => parseInt(s));
+        console.log(arr222)
+
+        // reduce
+        // 接收一个函数(必须)和一个初始值(可选), reduce()会从左到右依次把数组中的元素
+        // 用reduce处理, 并把处理的结果作为下次reduce的第一个参数.
+        // 如果是第一次, 会把前两个元素作为计算参数, 或者把用户指定的初始值作为起始参数
+        // 指定了初始值的话, 第一个值就是我们第一个参数的初始值,
+        // 然后原本第一个参数, 就变成了第二个参数
+        let array123 = [1, 20, 100, 3]
+        let result1 = array123.reduce((a, b) => a + b);
+        console.log(result1)
+
+        let result2 = array123.reduce((a, b) => a + b, 1000);
+        console.log(result2)
+
+
+        // 对象的扩展
+        let animal = {
+            name: "beijixion",
+            age: 22,
+            area: "beiji",
+            country: "russia"
+        }
+        // let obj2 = values(animal)
+        // console.log(obj2.toString())
+
+    </script>
+</head>
+<body>
+
+HelloWorld!
+</body>
+</html>
