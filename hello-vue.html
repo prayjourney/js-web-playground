@@ -7,6 +7,16 @@
 <body>
 <!-- vue对象的html模版 -->
 <div id="app">
+    <input type="button" value="点我生成随机数!" @click="random1=Math.random()">{{random1}}
+    <input type="button" value="点我 啊!" @click="show = !show">
+    <br>
+    <h1 v-if="show">
+        看到我啦？！ 说明我是true
+    </h1>
+    <h1 v-show="show">
+        看到我啦？！show 说明我是true
+    </h1>
+    <hr>
     <ul>
         <li v-for="user in users">{{user.name}}- {{user.gender}}- {{user.age}}</li>
     </ul>
@@ -42,7 +52,9 @@
                 {name: '范冰冰', gender: '女', age: 24},
                 {name: '刘亦菲', gender: '女', age: 18},
                 {name: '古力娜扎', gender: '女', age: 25}
-            ]
+            ],
+            show: true,
+            random1: 11
         },
         // 声明了一个方法
         methods: {
