@@ -8,6 +8,7 @@
 <!-- vue对象的html模版 -->
 <div id="app">
     <div>{{new Date(birthday).getFullYear()+"年"+new Date(birthday).getMonth() +"月" +new Date(birthday).getDay()}}</div>
+    <div>{{birth()}}</div>
     <input type="button" value="点我生成随机数!" @click="random1=Math.random()">{{random1}}
     <input type="button" value="点我 啊!" @click="show = !show">
     <br>
@@ -56,12 +57,16 @@
             ],
             show: true,
             random1: 11,
-            birthday:1529032123201 // 毫秒值
+            birthday: 1529032123201 // 毫秒值
         },
         // 声明了一个方法
         methods: {
             incr() {
                 this.num++;
+            },
+            birth() {
+                const date = new Date(this.birthday);
+                return date.getFullYear() + "年" + date.getMonth() + "月" + date.getDay() + "日"
             }
         }
     })
