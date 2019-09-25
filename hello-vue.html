@@ -7,6 +7,8 @@
 <body>
 <!-- vue对象的html模版 -->
 <div id="app">
+    使用监听!
+    <input type="text" v-model="search">
     <div>直接解析时间: {{new Date(birthday).getFullYear()+"年"+new Date(birthday).getMonth() +"月" +new Date(birthday).getDay()}}</div>
     <div>使用方法获取时间: {{birth()}}</div>
     <div>使用方法获取时间: {{birth2}}</div>
@@ -58,7 +60,8 @@
             ],
             show: true,
             random1: 11,
-            birthday: 1529032123201 // 毫秒值
+            birthday: 1529032123201, // 毫秒值
+            search : "" // 定义了监听的数据模型
         },
         // 声明了一个方法
         methods: {
@@ -75,6 +78,12 @@
             birth2() { // 计算属性本质是一个方法，但是必须返回结果, 相当于返回了一个返回值, 函数不一定有返回值
                 const date = new Date(this.birthday);
                 return date.getFullYear() + "Y-" + date.getMonth() + "M-" + date.getDay() + "D"
+            }
+        },
+        watch:{
+            // 监听的数据模型和对应的方法是同名的
+            search(val1, val2){
+                console.log(val1, val2);
             }
         }
     })
