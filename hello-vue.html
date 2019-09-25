@@ -7,8 +7,9 @@
 <body>
 <!-- vue对象的html模版 -->
 <div id="app">
-    <div>{{new Date(birthday).getFullYear()+"年"+new Date(birthday).getMonth() +"月" +new Date(birthday).getDay()}}</div>
-    <div>{{birth()}}</div>
+    <div>直接解析时间: {{new Date(birthday).getFullYear()+"年"+new Date(birthday).getMonth() +"月" +new Date(birthday).getDay()}}</div>
+    <div>使用方法获取时间: {{birth()}}</div>
+    <div>使用方法获取时间: {{birth2}}</div>
     <input type="button" value="点我生成随机数!" @click="random1=Math.random()">{{random1}}
     <input type="button" value="点我 啊!" @click="show = !show">
     <br>
@@ -65,8 +66,15 @@
                 this.num++;
             },
             birth() {
+                // 每次都要计算
                 const date = new Date(this.birthday);
                 return date.getFullYear() + "年" + date.getMonth() + "月" + date.getDay() + "日"
+            }
+        },
+        computed: {
+            birth2() { // 计算属性本质是一个方法，但是必须返回结果, 相当于返回了一个返回值, 函数不一定有返回值
+                const date = new Date(this.birthday);
+                return date.getFullYear() + "Y-" + date.getMonth() + "M-" + date.getDay() + "D"
             }
         }
     })
