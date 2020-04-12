@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>H5 and css3!</title>
+    <!-- 内联样式表 -->
+    <style type="text/css">
+        /* 选择器组 */
+        h1, h2 {
+            color: blueviolet;
+            font-family: 华文隶书, 华文行楷;
+        }
+
+        /*派生选择器*/
+        table th {
+            width: 100px;
+        }
+    </style>
+    <!-- 外部样式表 -->
+    <link rel="stylesheet" type="text/css" href="myCss.css">
+</head>
+<h1> Hello world! 你知道吗？</h1>
+<!-- 内联样式 -->
+<h2 style="text-align: center">我寄愁心与明月！</h2>
+<div id="myDiv">
+    <table class="mytable">
+        <th>姓名</th>
+        <th>年龄</th>
+        <th>性别</th>
+        <tr class="single">
+            <td>李四</td>
+            <td>22</td>
+            <td>男</td>
+        </tr>
+        <tr id="tr1">
+            <td>小海</td>
+            <td>23</td>
+            <td>男</td>
+        </tr>
+        <tr class="single">
+            <td>王麻子</td>
+            <td>29</td>
+            <td>男</td>
+        </tr>
+        <tr id="tr2">
+            <td>小黄</td>
+            <td>18</td>
+            <td>男</td>
+        </tr>
+        <tr class="single">
+            <td>李莉</td>
+            <td>22</td>
+            <td>女</td>
+        </tr>
+        <!--内联样式， 通过style来起作用，-->
+        <tr id="tr3" style="color: steelblue; font-size: 20px; font-family: 华文隶书">
+            <td>王美媛</td>
+            <td>19</td>
+            <td>女</td>
+        </tr>
+        <tr class="single">
+            <td>王二丹</td>
+            <td>32</td>
+            <td>男</td>
+        </tr>
+    </table>
+
+</div>
+<body>
+
+</body>
+</html>
