@@ -1,21 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>js 02</title>
-</head>
-<body>
+    <head>
+        <meta charset="UTF-8">
+        <title>js 02</title>
+    </head>
+    <body>
+        <h1>A Web Page</h1>
+        <p id="demo">一个段落</p>
+        <button type="button" onclick="myFunction()">试一试</button>
 
-<h1>A Web Page</h1>
-<p id="demo">一个段落</p>
-<button type="button" onclick="myFunction()">试一试</button>
-
-<!-- js脚本可以放在任何script之中，script可以放在html的head和body之中，都是可以的-->
-<script>
-    function myFunction() {
-        document.getElementById("demo").innerHTML = "段落被更改。";
-    }
-</script>
-
-</body>
+        <!-- js脚本可以放在任何script之中，script可以放在html的head和body之中，都是可以的-->
+        <script>
+            function myFunction() {
+                document.getElementById("demo").innerHTML = "段落被更改。";
+            }
+        </script>
+    </body>
 </html>

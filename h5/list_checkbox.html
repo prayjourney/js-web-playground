@@ -1,70 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>列表和下拉菜单</title>
-</head>
-<body>
-<div id = myDiv style="float: left; width: 800px; height:400px; background-color: bisque">
-    <h2 style="background-color: aqua"> 我是DiV</h2>
-    <div id = menu style="float: left; width: 200px; height:280px; background-color: lightgreen">
-        <ul>
-            <li>姓名</li>
-            <ul>
-                <li>张三</li>
-                <li>李四</li>
-                <li>王五</li>
-            </ul>
-        </ul>
-        <span>语言学习</span>
-        <!--ol是有序列表，li是选项-->
-        <ol>
-            <li>javascript</li>
-            <li>Html5</li>
-            <li>Css3</li>
-            <li>Java</li>
-            <li>python</li>
-        </ol>
-    </div>
-    <div id = menuRight  style="float: left; background: #fff6b0; width: 600px; height:280px;">
-        <p>临江仙·柳絮<br>
-            &nbsp;&nbsp;&nbsp;&emsp;&emsp;&emsp;&emsp;清 曹雪芹<br>
-            白玉堂前春解舞，东风卷得均匀。蜂围蝶阵乱纷纷。<br>
-            几曾随逝水？岂必委芳尘？<br>
-            万缕千丝终不改，任他随聚随分。韶华休笑本无根。<br>
-            好风凭借力，送我上青云。<br>
-        </p>
-        <span style="font-family: 楷体; font-size: 15px">选择一个选项：<br></span>
-        <!-- select 是下拉选项，每个option是他的各个不同的选项，
-        https://baijiahao.baidu.com/s?id=1636032841080177778 -->
-        <select id ="name" style="width: 90px">
-            <option value="张三丰">张三丰</option>
-            <option value="杨过">杨过</option>
-            <option value="小龙女">小龙女</option>
-        </select>
+    <head>
+        <meta charset="UTF-8">
+        <title>列表和下拉菜单</title>
+    </head>
+    <body>
+        <div id=myDiv style="float: left; width: 800px; height:400px; background-color: bisque">
+            <h2 style="background-color: aqua"> 我是DiV</h2>
+            <div id=menu style="float: left; width: 200px; height:280px; background-color: lightgreen">
+                <ul>
+                    <li>姓名</li>
+                    <ul>
+                        <li>张三</li>
+                        <li>李四</li>
+                        <li>王五</li>
+                    </ul>
+                </ul>
+                <span>语言学习</span>
+                <!--ol是有序列表，li是选项-->
+                <ol>
+                    <li>javascript</li>
+                    <li>Html5</li>
+                    <li>Css3</li>
+                    <li>Java</li>
+                    <li>python</li>
+                </ol>
+            </div>
+            <div id=menuRight style="float: left; background: #fff6b0; width: 600px; height:280px;">
+                <p>临江仙·柳絮<br>
+                    &nbsp;&nbsp;&nbsp;&emsp;&emsp;&emsp;&emsp;清 曹雪芹<br>
+                    白玉堂前春解舞，东风卷得均匀。蜂围蝶阵乱纷纷。<br>
+                    几曾随逝水？岂必委芳尘？<br>
+                    万缕千丝终不改，任他随聚随分。韶华休笑本无根。<br>
+                    好风凭借力，送我上青云。<br>
+                </p>
+                <span style="font-family: 楷体; font-size: 15px">选择一个选项：<br></span>
+                <!-- select 是下拉选项，每个option是他的各个不同的选项，
+                https://baijiahao.baidu.com/s?id=1636032841080177778 -->
+                <select id="name" style="width: 90px">
+                    <option value="张三丰">张三丰</option>
+                    <option value="杨过">杨过</option>
+                    <option value="小龙女">小龙女</option>
+                </select>
 
-        <!-- 这个是checkbox 复选框 , 复选框可以选择多个！-->
-        <br>
-        <input type="checkbox" id="helloCheckBox1" value="">海豚</input>
-        <input type="checkbox" id="helloCheckBox2" value="">老虎</input>
-        <input type="checkbox" id="helloCheckBox3" value="">恐龙</input>
+                <!-- 这个是checkbox 复选框 , 复选框可以选择多个！-->
+                <br>
+                <input type="checkbox" id="helloCheckBox1" value="">海豚</input>
+                <input type="checkbox" id="helloCheckBox2" value="">老虎</input>
+                <input type="checkbox" id="helloCheckBox3" value="">恐龙</input>
 
-        <!-- 这个是radio 单选按钮，此处，没有实现只能选一个的效果 -->
-        <br>
-        <input type="radio" value="">定西</input>
-        <input type="radio" value="">天空之城</input>
-        <input type="radio" value="">哈萨雅琪</input>
+                <!-- 这个是radio 单选按钮，此处，没有实现只能选一个的效果 -->
+                <br>
+                <input type="radio" value="">定西</input>
+                <input type="radio" value="">天空之城</input>
+                <input type="radio" value="">哈萨雅琪</input>
 
-        <br>
-        只能选一个哦！<br> <!-- https://blog.csdn.net/spacex_91/article/details/79335402?%3E-->
-        <input type="radio" value="" name="song">定西</input>
-        <input type="radio" value="" name="song">天空之城</input>
-        <input type="radio" value="" name="song">哈萨雅琪</input>
+                <br>
+                只能选一个哦！<br> <!-- https://blog.csdn.net/spacex_91/article/details/79335402?%3E-->
+                <input type="radio" value="" name="song">定西</input>
+                <input type="radio" value="" name="song">天空之城</input>
+                <input type="radio" value="" name="song">哈萨雅琪</input>
 
-    </div>
-    <div id="footer" style="float: left; background-color: #FFA500; height: 50px; width: 800px">
-        <p style="font-size: larger; text-align: center; float: inherit; color: #CE1122">Hello ! Footer !</p>
-    </div>
-</div>
-</body>
+            </div>
+            <div id="footer" style="float: left; background-color: #FFA500; height: 50px; width: 800px">
+                <p style="font-size: larger; text-align: center; float: inherit; color: #CE1122">Hello ! Footer !</p>
+            </div>
+        </div>
+    </body>
 </html>

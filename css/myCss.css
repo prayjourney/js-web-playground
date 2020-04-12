@@ -2,22 +2,26 @@
     margin: 2px;
     border-style: solid;
 }
+
 /*派生选择器*/
 table tr {
     margin-inside: 1px;
 }
+
 /*派生选择器*/
 #myDiv #tr1, #tr2, #tr3 {
     /*font-family: 楷体;*/
     color: orchid;
 }
+
 /* 类选择器 */
 .single {
     font-family: 华文楷体;
     background: lightblue;
     font-size: medium;
 }
-td{
+
+td {
     border: 1px;
     border-style: dotted;
 }

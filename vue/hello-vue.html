@@ -1,93 +1,95 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml">
-<head>
-    <meta charset="UTF-8">
-    <title>Hello-vue</title>
-</head>
-<body>
-<!-- vue对象的html模版 -->
-<div id="app">
-    使用监听!
-    <input type="text" v-model="search">
-    <div>直接解析时间: {{new Date(birthday).getFullYear()+"年"+new Date(birthday).getMonth() +"月" +new Date(birthday).getDay()}}</div>
-    <div>使用方法获取时间: {{birth()}}</div>
-    <div>使用方法获取时间: {{birth2}}</div>
-    <input type="button" value="点我生成随机数!" @click="random1=Math.random()">{{random1}}
-    <input type="button" value="点我 啊!" @click="show = !show">
-    <br>
-    <h1 v-if="show">
-        看到我啦？！ 说明我是true
-    </h1>
-    <h1 v-show="show">
-        看到我啦？！show 说明我是true
-    </h1>
-    <hr>
-    <ul>
-        <li v-for="user in users">{{user.name}}- {{user.gender}}- {{user.age}}</li>
-    </ul>
-    <hr>
-    <ul>
-        <li v-for="(user, index) in users">{{index + 1}}. {{user.name}}- {{user.gender}}- {{user.age}}</li>
-    </ul>
-    <hr>
-    <!-- 双向绑定, v-model: 数据模型-->
-    <input type="text" v-model="num">
-    <!-- v-on: 事件名称= js表达式 -->
-    <input type="button" value="点我啊!" v-on:click="num++">
-    <!-- 绑定程一个方法-->
-    <input type="button" value="点我啊111!" v-on:click="incr">
+    <head>
+        <meta charset="UTF-8">
+        <title>Hello-vue</title>
+    </head>
+    <body>
+        <!-- vue对象的html模版 -->
+        <div id="app">
+            使用监听!
+            <input type="text" v-model="search">
+            <div>直接解析时间: {{new Date(birthday).getFullYear()+"年"+new Date(birthday).getMonth() +"月" +new
+                Date(birthday).getDay()}}
+            </div>
+            <div>使用方法获取时间: {{birth()}}</div>
+            <div>使用方法获取时间: {{birth2}}</div>
+            <input type="button" value="点我生成随机数!" @click="random1=Math.random()">{{random1}}
+            <input type="button" value="点我 啊!" @click="show = !show">
+            <br>
+            <h1 v-if="show">
+                看到我啦？！ 说明我是true
+            </h1>
+            <h1 v-show="show">
+                看到我啦？！show 说明我是true
+            </h1>
+            <hr>
+            <ul>
+                <li v-for="user in users">{{user.name}}- {{user.gender}}- {{user.age}}</li>
+            </ul>
+            <hr>
+            <ul>
+                <li v-for="(user, index) in users">{{index + 1}}. {{user.name}}- {{user.gender}}- {{user.age}}</li>
+            </ul>
+            <hr>
+            <!-- 双向绑定, v-model: 数据模型-->
+            <input type="text" v-model="num">
+            <!-- v-on: 事件名称= js表达式 -->
+            <input type="button" value="点我啊!" v-on:click="num++">
+            <!-- 绑定程一个方法-->
+            <input type="button" value="点我啊111!" v-on:click="incr">
 
-    <!-- 花括号: js表达式-->
-    <!--<h1>大家好, 我是 {{name}}, 有{{num}}位女神迷恋我!</h1>-->
-    <!-- 网速慢的时候差值表达式可能会出现{{XXX}} 这种, 如下是能解决-->
-    <h1>大家好, 我是 <span v-text="name">张学友</span>, 有{{num}}位女神迷恋我!</h1>
-</div>
-<!-- 引入vue模块 -->
-<script src="../node_modules/vue/dist/vue.js"></script>
-<script>
-    // 初始化一个vue的实例
-    const app = new Vue({
-        el: "#app", //element的缩写, 选择器
-        data: { // 定义数据模型
-            name: "刘德华",
-            num: 100,
-            users: [
-                {name: '柳岩', gender: '女', age: 21},
-                {name: '峰哥', gender: '男', age: 18},
-                {name: '范冰冰', gender: '女', age: 24},
-                {name: '刘亦菲', gender: '女', age: 18},
-                {name: '古力娜扎', gender: '女', age: 25}
-            ],
-            show: true,
-            random1: 11,
-            birthday: 1529032123201, // 毫秒值
-            search : "" // 定义了监听的数据模型
-        },
-        // 声明了一个方法
-        methods: {
-            incr() {
-                this.num++;
-            },
-            birth() {
-                // 每次都要计算
-                const date = new Date(this.birthday);
-                return date.getFullYear() + "年" + date.getMonth() + "月" + date.getDay() + "日"
-            }
-        },
-        computed: {
-            birth2() { // 计算属性本质是一个方法，但是必须返回结果, 相当于返回了一个返回值, 函数不一定有返回值
-                const date = new Date(this.birthday);
-                return date.getFullYear() + "Y-" + date.getMonth() + "M-" + date.getDay() + "D"
-            }
-        },
-        watch:{
-            // 监听的数据模型和对应的方法是同名的
-            search(val1, val2){
-                // 发送异步请求到后台接口, 获取值, 达到百度搜索栏提醒的效果
-                console.log(val1, val2);
-            }
-        }
-    })
-</script>
-</body>
+            <!-- 花括号: js表达式-->
+            <!--<h1>大家好, 我是 {{name}}, 有{{num}}位女神迷恋我!</h1>-->
+            <!-- 网速慢的时候差值表达式可能会出现{{XXX}} 这种, 如下是能解决-->
+            <h1>大家好, 我是 <span v-text="name">张学友</span>, 有{{num}}位女神迷恋我!</h1>
+        </div>
+        <!-- 引入vue模块 -->
+        <script src="../node_modules/vue/dist/vue.js"></script>
+        <script>
+            // 初始化一个vue的实例
+            const app = new Vue({
+                el: "#app", //element的缩写, 选择器
+                data: { // 定义数据模型
+                    name: "刘德华",
+                    num: 100,
+                    users: [
+                        {name: '柳岩', gender: '女', age: 21},
+                        {name: '峰哥', gender: '男', age: 18},
+                        {name: '范冰冰', gender: '女', age: 24},
+                        {name: '刘亦菲', gender: '女', age: 18},
+                        {name: '古力娜扎', gender: '女', age: 25}
+                    ],
+                    show: true,
+                    random1: 11,
+                    birthday: 1529032123201, // 毫秒值
+                    search: "" // 定义了监听的数据模型
+                },
+                // 声明了一个方法
+                methods: {
+                    incr() {
+                        this.num++;
+                    },
+                    birth() {
+                        // 每次都要计算
+                        const date = new Date(this.birthday);
+                        return date.getFullYear() + "年" + date.getMonth() + "月" + date.getDay() + "日"
+                    }
+                },
+                computed: {
+                    birth2() { // 计算属性本质是一个方法，但是必须返回结果, 相当于返回了一个返回值, 函数不一定有返回值
+                        const date = new Date(this.birthday);
+                        return date.getFullYear() + "Y-" + date.getMonth() + "M-" + date.getDay() + "D"
+                    }
+                },
+                watch: {
+                    // 监听的数据模型和对应的方法是同名的
+                    search(val1, val2) {
+                        // 发送异步请求到后台接口, 获取值, 达到百度搜索栏提醒的效果
+                        console.log(val1, val2);
+                    }
+                }
+            })
+        </script>
+    </body>
 </html>
