@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>js 处理事件</title>
+        <script>
+            function clickMethod() {
+                let article =
+                    "峨眉山月歌\n" +
+                    "         李白\n" +
+                    "峨眉山月半轮秋，影入平羌江水流。\n" +
+                    "夜发清溪向三峡，思君不见下渝州。"
+                this.document.getElementById("article").innerHTML= article;
+            }
+        </script>
+    </head>
+    <body>
+        <p id="article" style="font-size: large; color: lightskyblue; text-align: center" > 李白的诗歌在哪儿？ </p>
+        <input id="myButton" type="button" onclick="clickMethod()" value="点击查看">
+        <style>
+            #myButton{
+                text-align: center;
+                margin-left: 0px;
+                margin-right: 0px;
+                font-family: 华文隶书;
+                font-size: 18px;
+                color: tomato;
+                border-bottom-style: dashed;
+                padding-left: inherit;
+            }
+        </style>
+
+    </body>
+</html>
