@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>对齐登录</title>
+        <script>
+            function login() {
+                window.alert("服务器连接失败...");
+            }
+            function remove() {
+                document.getElementById("name").innerText="";
+                document.getElementById("phone").innerText="";
+                document.getElementById("email").innerText="";
+            }
+        </script>
+    </head>
+    <body>
+        <div>
+            姓&emsp;&emsp;名：<input id="name" type="text"/><br>
+            手&ensp;机&ensp;号：<input id="phone" type="text"/><br>
+            电子邮箱：<input id="email" type="text"/><br>
+            &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+            &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;<input type="button" value="取消" onclick="remove()">
+            &ensp;&nbsp;<input type="button" value="登录" onclick="login()">
+        </div>
+    </body>
+</html>
